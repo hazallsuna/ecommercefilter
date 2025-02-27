@@ -18,7 +18,7 @@ function App() {
   
   const fetchProducts = async () => {
     try {
-      const url = new URL('http://localhost:8000/products');
+      const url = new URL('https://ecommercefilter-ebdu5q0f7-hazals-projects-53a4fddc.vercel.app/products');
       searchParams.forEach((value, key) => {
         url.searchParams.append(key, value);
       });
