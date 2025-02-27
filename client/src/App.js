@@ -16,8 +16,6 @@ function App() {
     fetchProducts();
   }, [products,searchParams,query]);
   
-
-
   const fetchProducts = async () => {
     try {
       const url = new URL('http://localhost:8000/products');
