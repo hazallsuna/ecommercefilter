@@ -8,9 +8,10 @@ const bodyParser = require('body-parser');
 const Product = require("./models/Product");
 
 app.use(cors({
-  origin: 'http://localhost:3000', 
+  origin: '*',  
   credentials: true
 }));
+
 app.use(express.json());
 app.use(bodyParser.json());
 
@@ -33,7 +34,7 @@ app.get('/products', async (req, res) => {
       query['images.color'] = { $in: req.query.colors.split(',') };
     }
     if (req.query.brands) {
-      query.brand = { $in: req.query.brands.split(',') };
+      query.brand = { $in: req.query.brands.split(',') }; 
     }
     if (req.query.sizes) {
       query.sizes = { $in: req.query.sizes.split(',').map(Number) };
